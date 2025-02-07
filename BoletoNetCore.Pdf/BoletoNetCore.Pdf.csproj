@@ -51,5 +51,9 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux" Version="2.88.8" />
+  </ItemGroup>
+
 
 </Project>

@@ -1,3 +1,4 @@
+using BoletoNetCore.BTGPactual;
 using BoletoNetCore.Exceptions;
 using BoletoNetCore.Extensions;
 using System;
@@ -23,7 +24,9 @@ namespace BoletoNetCore
             [748] = BancoSicredi.Instance,
             [756] = BancoSicoob.Instance,
             [097] = BancoCrediSIS.Instance,
-            [077] = BancoInter.Instance
+            [077] = BancoInter.Instance,
+            [208] = BancoBTGPactual.Instance,
+            [707] = BancoDaycoval.Instance
         };
 
         public static IBanco Instancia(int codigoBanco)
