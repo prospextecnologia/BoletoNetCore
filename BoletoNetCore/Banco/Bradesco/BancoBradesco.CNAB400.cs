@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Runtime.ConstrainedExecution;
-using BoletoNetCore.Exceptions;
-using BoletoNetCore.Extensions;
 using static System.String;
 
 namespace BoletoNetCore

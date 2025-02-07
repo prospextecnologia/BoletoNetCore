@@ -4,7 +4,7 @@ namespace BoletoNetCore
     /// Representa cada tipo de dado possível em um arquivo EDI.
     /// </summary>
     public enum TTiposDadoEDI
-    { 
+    {
         /// <summary>
         /// Representa um campo alfanumérico, alinhado à esquerda e com brancos à direita. A propriedade ValorNatural é do tipo String
         /// </summary>

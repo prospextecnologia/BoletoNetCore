@@ -1,7 +1,6 @@
-﻿using System;
+﻿using BoletoNetCore.Exceptions;
+using System;
 using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
-using BoletoNetCore.Extensions;
 using static System.String;
 
 namespace BoletoNetCore
@@ -35,10 +34,10 @@ namespace BoletoNetCore
             Beneficiario.CodigoFormatado = $"{contaBancaria.Agencia} / {codigoBeneficiario}-{Beneficiario.CodigoDV}";
         }
 
-        
+
         public string GerarMensagemRemessa(TipoArquivo tipoArquivo, Boleto boleto, ref int numeroRegistro)
         {
-                return null;
+            return null;
         }
     }
 }

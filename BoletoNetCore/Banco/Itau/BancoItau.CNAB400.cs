@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using BoletoNetCore.Exceptions;
 using static System.String;
 
 namespace BoletoNetCore
@@ -250,8 +249,8 @@ namespace BoletoNetCore
                 if (registro.Substring(0, 9) != "02RETORNO")
                     throw new Exception("O arquivo não é do tipo \"02RETORNO\"");
 
-                if (registro.Substring(9, 2) == "04") 
-                    this.DescontoDuplicatas = true; 
+                if (registro.Substring(9, 2) == "04")
+                    this.DescontoDuplicatas = true;
 
                 this.Beneficiario = new Beneficiario();
                 this.Beneficiario.ContaBancaria = new ContaBancaria();
@@ -271,7 +270,8 @@ namespace BoletoNetCore
         {
             try
             {
-                if (this.DescontoDuplicatas == false){
+                if (this.DescontoDuplicatas == false)
+                {
                     //Nº Controle do Participante
                     boleto.NumeroControleParticipante = registro.Substring(37, 25);
 
@@ -570,7 +570,7 @@ namespace BoletoNetCore
         public static IEnumerable<string> MotivoOcorrenciaCnab400(string codigo, string codigoMovimentoRetorno)
         {
             //define qual o domínio que será utilizado, conforme C047
-            var funcaoDominio = new string[] {  "02"  }.Contains(codigoMovimentoRetorno) ? MotivoOcorrenciaTabela10 :
+            var funcaoDominio = new string[] { "02" }.Contains(codigoMovimentoRetorno) ? MotivoOcorrenciaTabela10 :
                           new string[] { "03" }.Contains(codigoMovimentoRetorno) ? MotivoOcorrenciaTabela1 : null;
 
             //retorna uma lista vazia caso ele não encontre um domínio de motivos de ocorrência

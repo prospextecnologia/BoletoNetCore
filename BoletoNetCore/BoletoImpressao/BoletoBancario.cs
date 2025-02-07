@@ -1,3 +1,4 @@
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 //Envio por email
@@ -6,7 +7,6 @@ using System.Net.Mail;
 using System.Net.Mime;
 using System.Reflection;
 using System.Text;
-using SkiaSharp;
 
 namespace BoletoNetCore
 {

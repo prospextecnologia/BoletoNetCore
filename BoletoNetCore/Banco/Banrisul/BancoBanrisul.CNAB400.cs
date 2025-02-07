@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
-using BoletoNetCore.Extensions;
 
 namespace BoletoNetCore
 {
@@ -161,7 +158,7 @@ namespace BoletoNetCore
         }
 
 
-        
+
 
         private string GerarDetalheRemessaCNAB400Registro1(Boleto boleto, ref int numeroRegistroGeral)
         {

@@ -36,7 +36,7 @@ namespace BoletoNetCore
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0158, 006, 0, numeroArquivoRemessa, '0');
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0164, 003, 0, "040", '0');
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0167, 005, 0, "0", '0');
-                reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0172, 054, 0, Empty, ' ');                
+                reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0172, 054, 0, Empty, ' ');
                 reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0226, 003, 0, "000", '0');
                 reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0229, 012, 0, Empty, ' ');
                 reg.CodificarLinha();
@@ -101,7 +101,7 @@ namespace BoletoNetCore
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0024, 006, 0, numeroRegistroCobrancaSimples, '0');
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0030, 017, 2, valorCobrancaSimples, '0');
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0047, 006, 0, numeroRegistroCobrancaVinculada, '0');
-                reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0053, 017, 2, valorCobrancaVinculada, '0');               
+                reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0053, 017, 2, valorCobrancaVinculada, '0');
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0070, 046, 0, "0", '0');
                 reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0116, 008, 0, "0", '0');
                 reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0124, 117, 0, Empty, ' ');
@@ -249,7 +249,7 @@ namespace BoletoNetCore
                         break;
                 }
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0225, 002, 0, boleto.DiasBaixaDevolucao, '0');
-                reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0227, 013, 0, "0", '0');               
+                reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0227, 013, 0, "0", '0');
                 reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0240, 001, 0, Empty, ' ');
                 reg.CodificarLinha();
                 var vLinha = reg.LinhaRegistro;

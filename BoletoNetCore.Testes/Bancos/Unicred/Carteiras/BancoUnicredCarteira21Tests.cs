@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
@@ -191,6 +193,29 @@ namespace BoletoNetCore.Testes
             Assert.That(boleto.CodigoBarra.LinhaDigitavel, Is.EqualTo(linhaDigitavel), "Linha digitável inválida");
         }
 
+
+        const string arquivoTeste = @"13600000         210572712000139                    0605109985EF2ACF064BCLINICA ODONTOLOGICA INTRA-ORAUNICRED DO BRASIL                       11810202413462600000208500000                                                                     
+13600011R01  044 2010572712000139                    06051000000000986712CLINICA ODONTOLOGICA INTRA-ORA                                                                                000000021810202400000000                                 
+1360001300001P 020605100000009867120000010000003        21    1655210        10112024000000000001000      NNN171020241        000000000000000000000000000000000000000               0000000000000001655210                  3000000090000000000 
+1360001300002Q 021000005505545645ODANIA ALVES MACHADO VASCONCELOS        QUADRA 301 CONJUNTO 2 9 AP 1502         SAMAMBAIA SUL (72300533BRASILIA       DF0000000000000000                                                                       
+1360001300003R 02                                                2        000000000000002                                                                                                                                                       
+13600015         0000050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000                                                                                                                     
+13699999         000001000007000000                                                                                                                                                                                                             
+";
+
+        [Test]
+        public void LerRetorno_validando_valor_pago()
+        {
+
+            var buffer = Encoding.ASCII.GetBytes(arquivoTeste);
+            var mem = new MemoryStream(buffer);
+            var boletos = new ArquivoRetorno(mem);
+
+            Assert.AreEqual(10, boletos.Boletos.Count);
+            Assert.AreEqual(0, boletos.Boletos[7].ValorPago);
+            Assert.AreEqual(9, boletos.Boletos[8].ValorPago);
+            Assert.AreEqual(10, boletos.Boletos[9].ValorPago);
+        }
 
 
 

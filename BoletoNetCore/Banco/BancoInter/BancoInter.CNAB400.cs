@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
-using BoletoNetCore.Extensions;
 
 namespace BoletoNetCore
 {
@@ -80,7 +78,7 @@ namespace BoletoNetCore
                 reg.Adicionar(TTiposDadoEDI.ediAlphaAliDireita______, 0028, 010, 0, boleto.Banco.Beneficiario.ContaBancaria.Conta, '0');
                 reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0038, 025, 0, boleto.NumeroControleParticipante, ' ');
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0063, 003, 0, string.Empty, ' ');
-                if(boleto.PercentualMulta > 0 || boleto.ValorMulta > 0)
+                if (boleto.PercentualMulta > 0 || boleto.ValorMulta > 0)
                 {
                     if (boleto.DataVencimento.ToString("dd/MM/yyyy") == boleto.DataMulta.ToString("dd/MM/yyyy"))
                         boleto.DataMulta = boleto.DataVencimento.AddDays(1);
@@ -303,7 +301,7 @@ namespace BoletoNetCore
 
         public void LerDetalheRetornoCNAB400Segmento7(ref Boleto boleto, string registro)
         {
-            
+
         }
 
         private string DescricaoMovimentoRetornoCnab400(string codigo, string registro)

@@ -1,5 +1,5 @@
-using System;
 using BoletoNetCore.Util;
+using System;
 
 namespace BoletoNetCore
 {

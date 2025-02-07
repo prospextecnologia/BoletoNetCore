@@ -1,6 +1,6 @@
-﻿using System;
-using BoletoNetCore.Exceptions;
+﻿using BoletoNetCore.Exceptions;
 using BoletoNetCore.Extensions;
+using System;
 using static System.String;
 
 namespace BoletoNetCore
@@ -60,7 +60,7 @@ namespace BoletoNetCore
             {
                 throw BoletoNetCoreException.NossoNumeroInvalido(boleto.NossoNumeroDV, 1);
             }
-            
+
             return $"{boleto.Banco.Digito}{boleto.Banco.Beneficiario.ContaBancaria.Agencia}{boleto.Banco.Beneficiario.ContaBancaria.DigitoAgencia}00{boleto.Banco.Beneficiario.ContaBancaria.Conta}{boleto.Banco.Beneficiario.ContaBancaria.DigitoConta}{boleto.NossoNumero}{boleto.NossoNumeroDV}2";
         }
     }

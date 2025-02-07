@@ -1,8 +1,4 @@
-﻿using BoletoNetCore.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace BoletoNetCore
 {
@@ -28,7 +24,7 @@ namespace BoletoNetCore
             boleto.NossoNumero = Sequencial(boleto);
             boleto.NossoNumeroFormatado = boleto.NossoNumero;
         }
-         
+
         private string Mod11(string seq)
         {
             int num1 = 0;

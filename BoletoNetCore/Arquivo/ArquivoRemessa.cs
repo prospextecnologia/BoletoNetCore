@@ -54,6 +54,7 @@ namespace BoletoNetCore
                 }
 
                 StreamWriter arquivoRemessa = new StreamWriter(stream, Encoding.GetEncoding("ISO-8859-1"));
+                //arquivoRemessa.NewLine = "\r\n";
                 string strline = string.Empty;
 
                 // Header do Arquivo

@@ -23,7 +23,7 @@ namespace BoletoNetCore
                 // Com o advento das APIs "developers" dos bancos para a cobrança, muitos devolvem o código de barras como ele deve ser impresso no boleto.
                 // Com isso, não há a necessidade de se criar o código de barras uma vez que ele foi informado
                 // Marcelo - https://unimake.com.br/ 
-                if(!string.IsNullOrWhiteSpace(_codigoDeBarras))
+                if (!string.IsNullOrWhiteSpace(_codigoDeBarras))
                 {
                     return _codigoDeBarras;
                 }
@@ -93,7 +93,7 @@ namespace BoletoNetCore
 
                 // Calcula Dígito Verificador do Código de Barras
                 int pesoMaximo = 9, soma = 0, peso = 2;
-                for(int i = (codigoSemDv.Length - 1); i >= 0; i--)
+                for (int i = (codigoSemDv.Length - 1); i >= 0; i--)
                 {
                     soma = soma + (Convert.ToInt32(codigoSemDv.Substring(i, 1)) * peso);
 
@@ -102,7 +102,7 @@ namespace BoletoNetCore
                 }
                 var resto = (soma % 11);
 
-                if(resto <= 1 || resto > 9)
+                if (resto <= 1 || resto > 9)
                     return "1";
 
                 return (11 - resto).ToString();

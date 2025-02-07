@@ -19,7 +19,7 @@ namespace BoletoNetCore.Extensions
 
         public static string MidVB(this string str, int start, int length)
         {
-            return str.Mid(--start,length);
+            return str.Mid(--start, length);
         }
 
         public static string Mid(this string str, int startIndex, int length)

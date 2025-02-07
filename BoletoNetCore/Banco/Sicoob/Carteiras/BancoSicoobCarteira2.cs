@@ -10,7 +10,7 @@ namespace BoletoNetCore
         internal static Lazy<ICarteira<BancoSicoob>> Instance { get; } = new Lazy<ICarteira<BancoSicoob>>(() => new BancoSicoobCarteira2());
         public BancoSicoobCarteira2()
         {
-            
+
         }
 
         public string FormataCodigoBarraCampoLivre(Boleto boleto)

@@ -1,6 +1,4 @@
 ﻿using System;
-using BoletoNetCore.Extensions;
-using static System.String;
 
 namespace BoletoNetCore
 {
@@ -12,7 +10,7 @@ namespace BoletoNetCore
 
         private BancoCrediSISCarteira18()
         {
-            
+
         }
         public void FormataCodigoCliente(Boleto boleto)
         {
@@ -360,7 +358,7 @@ namespace BoletoNetCore
         //    return FormataCampoLivre;
         //}
 
-       
+
 
         //public override void FormataCodigoBarra(Boleto boleto)
         //{
@@ -393,7 +391,7 @@ namespace BoletoNetCore
         //    cedente.Codigo = cedente.Codigo.Substring(0, 6).PadLeft(6, '0');
         //}
 
-      
+
 
         public static long FatorVencimento(Boleto boleto)
         {

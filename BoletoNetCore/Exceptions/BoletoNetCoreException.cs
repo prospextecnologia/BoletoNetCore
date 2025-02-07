@@ -63,7 +63,7 @@ namespace BoletoNetCore.Exceptions
 
         public static Exception NumeroSequencialInvalido(int numeroSequencial)
             => new BoletoNetCoreException($"Número sequencial é inválido: {numeroSequencial}");
-        
+
         public static Exception NossoNumeroInvalido(string nossoNumero, int digitos)
             => new BoletoNetCoreException($"O nosso número ({nossoNumero}) deve conter {digitos} dígitos.");
 

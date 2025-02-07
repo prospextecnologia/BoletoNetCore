@@ -1,5 +1,5 @@
-﻿using System;
-using BoletoNetCore.Extensions;
+﻿using BoletoNetCore.Extensions;
+using System;
 using static System.String;
 
 

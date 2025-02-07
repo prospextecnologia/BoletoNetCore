@@ -1,12 +1,11 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using BoletoNetCore.Extensions;
+﻿using BoletoNetCore.Extensions;
+using System;
 using static System.String;
 
 namespace BoletoNetCore
 {
     [CarteiraCodigo("1/01")]
-    internal class BancoSicoobCarteira1: ICarteira<BancoSicoob>
+    internal class BancoSicoobCarteira1 : ICarteira<BancoSicoob>
     {
         internal static Lazy<ICarteira<BancoSicoob>> Instance { get; } = new Lazy<ICarteira<BancoSicoob>>(() => new BancoSicoobCarteira1());
 

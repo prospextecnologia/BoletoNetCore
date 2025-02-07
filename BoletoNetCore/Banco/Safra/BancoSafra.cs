@@ -1,7 +1,5 @@
-﻿using System;
+﻿using BoletoNetCore.Exceptions;
 using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
-using static System.String;
 
 namespace BoletoNetCore
 {
@@ -22,7 +20,7 @@ namespace BoletoNetCore
 
             if (!CarteiraFactory<BancoSafra>.CarteiraEstaImplementada(contaBancaria.CarteiraComVariacaoPadrao))
                 throw BoletoNetCoreException.CarteiraNaoImplementada(contaBancaria.CarteiraComVariacaoPadrao);
-            
+
             contaBancaria.FormatarDados("Pagável em qualquer Banco do Sistema de Compensação", "", "", 6);
 
             Beneficiario.CodigoFormatado = $"{contaBancaria.Agencia}-{contaBancaria.DigitoAgencia} / {contaBancaria.Conta}-{contaBancaria.DigitoConta}";

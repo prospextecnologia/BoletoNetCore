@@ -19,11 +19,11 @@ namespace BoletoNetCore
             // O nosso número não pode ser em branco.
             if (IsNullOrWhiteSpace(boleto.NossoNumero))
                 boleto.NossoNumero = "";//boleto registrado não aceita nosso número somente em geração do boleto, mas em remessa CNAB é possível
-                //throw new Exception("Nosso Número não informado.");
+                                        //throw new Exception("Nosso Número não informado.");
 
             if (boleto.Banco.Beneficiario.Codigo.Length != 7)
                 throw new NotImplementedException("Não foi possível formatar o nosso número: Código do Beneficiário não tem 7 dígitos.");
-            
+
             // Se o convênio for de 7 dígitos,
             // o nosso número deve estar formatado corretamente (com 17 dígitos e iniciando com o código do convênio),
             if (boleto.NossoNumero?.Length == 17)

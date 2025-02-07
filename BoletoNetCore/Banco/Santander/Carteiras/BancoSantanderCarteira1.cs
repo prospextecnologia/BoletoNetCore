@@ -14,7 +14,7 @@ namespace BoletoNetCore
 
         public void FormataNossoNumero(Boleto boleto)
         {
-            
+
         }
 
         public string FormataCodigoBarraCampoLivre(Boleto boleto)

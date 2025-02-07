@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
 using static System.String;
 
 namespace BoletoNetCore
@@ -216,7 +214,9 @@ namespace BoletoNetCore
                     reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0118, 001, 0, "0", '0');
                     reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0119, 008, 0, "0", '0');
                     reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0127, 015, 2, 0, '0');
-                } else {
+                }
+                else
+                {
                     // Com Juros Mora ($)
                     var codigoMora = (boleto.ValorJurosDia != 0) ? "1" : ((boleto.PercentualJurosDia != 0) ? "2" : "0");
                     var valor = (boleto.ValorJurosDia != 0) ? boleto.ValorJurosDia : ((boleto.PercentualJurosDia != 0) ? boleto.PercentualJurosDia : 0);

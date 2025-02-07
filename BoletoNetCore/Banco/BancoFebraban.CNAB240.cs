@@ -1,10 +1,8 @@
-﻿using BoletoNetCore.Exceptions;
-using System;
-using System.Collections.Generic;
+﻿using System;
 
 namespace BoletoNetCore
 {
-    partial class BancoFebraban<T> 
+    partial class BancoFebraban<T>
     {
         public virtual void LerHeaderRetornoCNAB240(ArquivoRetorno arquivoRetorno, string registro)
         {

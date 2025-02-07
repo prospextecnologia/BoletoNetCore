@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
-using BoletoNetCore.Extensions;
+﻿using System.Collections.Generic;
 
 namespace BoletoNetCore
 {

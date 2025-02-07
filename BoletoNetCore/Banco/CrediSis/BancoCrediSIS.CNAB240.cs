@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using static System.String;
 
 namespace BoletoNetCore
@@ -572,7 +569,7 @@ namespace BoletoNetCore
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0019, 002, 0, Empty, ' ');
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0021, 140, 0, msg5A9, ' ');
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0161, 002, 0, Empty, ' ');
-                reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0163, 078,  0, Empty, ' ');
+                reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0163, 078, 0, Empty, ' ');
 
 
                 reg.CodificarLinha();

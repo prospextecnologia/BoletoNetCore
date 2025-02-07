@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
 using static System.String;
 
 namespace BoletoNetCore
@@ -92,9 +90,9 @@ namespace BoletoNetCore
         public string GerarTrailerRemessaCNAB400(int numeroRegistroGeral, decimal valorBoletoGeral, int numeroRegistroCobrancaSimples, decimal valorCobrancaSimples, int numeroRegistroCobrancaVinculada, decimal valorCobrancaVinculada, int numeroRegistroCobrancaCaucionada, decimal valorCobrancaCaucionada, int numeroRegistroCobrancaDescontada, decimal valorCobrancaDescontada)
         {
             try
-            {               
+            {
                 numeroRegistroGeral++;
-                
+
                 var reg = new TRegistroEDI();
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0001, 001, 0, "9", '0');
                 reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0002, 367, 0, Empty, ' ');
@@ -109,7 +107,7 @@ namespace BoletoNetCore
             {
                 throw new Exception("Erro durante a geração do registro TRAILER do arquivo de REMESSA.", ex);
             }
-}
+        }
 
         public void LerTrailerRetornoCNAB400(string registro)
         {

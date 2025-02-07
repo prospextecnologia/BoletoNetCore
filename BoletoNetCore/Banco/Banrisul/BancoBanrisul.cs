@@ -1,7 +1,5 @@
-﻿using System;
+﻿using BoletoNetCore.Exceptions;
 using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
-using BoletoNetCore.Extensions;
 
 namespace BoletoNetCore
 {
@@ -29,7 +27,7 @@ namespace BoletoNetCore
 
         }
 
-        
+
         public string GerarMensagemRemessa(TipoArquivo tipoArquivo, Boleto boleto, ref int numeroRegistro)
         {
             return null;

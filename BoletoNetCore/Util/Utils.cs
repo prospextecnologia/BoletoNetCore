@@ -1,8 +1,6 @@
 using SkiaSharp;
 using System;
 using System.Globalization;
-using System.IO;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace BoletoNetCore
 {
@@ -284,7 +282,7 @@ namespace BoletoNetCore
                 using (var canvas = new SKCanvas(img))
                 {
                     canvas.Clear(backColor);//define cor de tras
-                    canvas.DrawText(text, 0, -bounds.Top + (pixelsAdicionalAltura/2), textPaint);//escreve o texto
+                    canvas.DrawText(text, 0, -bounds.Top + (pixelsAdicionalAltura / 2), textPaint);//escreve o texto
                     canvas.Save();//salva o canvas (aplicando no img)
                 }
             }

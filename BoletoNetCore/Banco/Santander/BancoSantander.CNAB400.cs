@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
-using BoletoNetCore.Extensions;
 
 namespace BoletoNetCore
 {
@@ -48,7 +45,7 @@ namespace BoletoNetCore
                 var reg = new TRegistroEDI();
                 reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0001, 001, 0, "9", ' ');
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0002, 006, 0, numeroRegistroCobrancaSimples, '0');
-                reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0008, 013, 2, valorBoletoGeral, '0'); 
+                reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0008, 013, 2, valorBoletoGeral, '0');
                 reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0021, 374, 0, string.Empty, '0');
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0395, 006, 0, numeroRegistroGeral, '0');
                 reg.CodificarLinha();
@@ -169,7 +166,7 @@ namespace BoletoNetCore
         private static int ConvertTipoCarteira(TipoCarteira tipoCarteira)
         {
             switch (tipoCarteira)
-            {   
+            {
                 case TipoCarteira.CarteiraCobrancaSimples:
                     return 5;
                 case TipoCarteira.CarteiraCobrancaCaucionada:
@@ -229,7 +226,7 @@ namespace BoletoNetCore
                 //Valores do Título
                 boleto.ValorTitulo = string.IsNullOrWhiteSpace(registro.Substring(152, 13)) ? 0 : Convert.ToDecimal(registro.Substring(152, 13)) / 100;
 
-                
+
 
                 boleto.ValorTarifas = string.IsNullOrWhiteSpace(registro.Substring(175, 13)) ? 0 : Convert.ToDecimal(registro.Substring(175, 13)) / 100;
                 boleto.ValorOutrasDespesas = string.IsNullOrWhiteSpace(registro.Substring(188, 13)) ? 0 : Convert.ToDecimal(registro.Substring(188, 13)) / 100;
@@ -241,7 +238,7 @@ namespace BoletoNetCore
                 boleto.ValorMulta = string.IsNullOrWhiteSpace(registro.Substring(266, 13)) ? 0 : Convert.ToDecimal(registro.Substring(266, 13)) / 100;
                 boleto.ValorOutrosCreditos = string.IsNullOrWhiteSpace(registro.Substring(279, 13)) ? 0 : Convert.ToDecimal(registro.Substring(279, 13)) / 100;
 
-                
+
                 boleto.DataCredito = Utils.ToDateTime(Utils.ToInt32(registro.Substring(295, 6)).ToString("##-##-##"));
 
                 // Registro Retorno
@@ -259,7 +256,7 @@ namespace BoletoNetCore
 
         public void LerDetalheRetornoCNAB400Segmento7(ref Boleto boleto, string registro)
         {
-            
+
         }
 
         private string DescricaoMovimentoRetornoCnab400(string codigo, string registro)

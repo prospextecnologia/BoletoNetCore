@@ -1,5 +1,5 @@
-using System;
 using BoletoNetCore.Util;
+using System;
 
 namespace BoletoNetCore
 {
@@ -55,14 +55,14 @@ namespace BoletoNetCore
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0015, 001, 0, "", ' '); // 015 a 015 - Uso exclusivo FEBRABAN/CNAB
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0016, 002, 0, boleto.CodigoMovimentoRetorno, ' '); // 016 a 017 - Código de movimento remessa
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliDireita______, 0018, 005, 0, this.Beneficiario.ContaBancaria.Agencia.OnlyNumber(), '0'); // 018 a 022 - Agência mantenedora da conta
-            reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0023, 001, 0, this.Beneficiario.ContaBancaria.DigitoAgencia , '0');// 023 a 023 - Dígito verificador da agência
+            reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0023, 001, 0, this.Beneficiario.ContaBancaria.DigitoAgencia, '0');// 023 a 023 - Dígito verificador da agência
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliDireita______, 0024, 012, 0, this.Beneficiario.ContaBancaria.Conta.OnlyNumber(), '0'); // 024 a 035 - Número da conta corrente
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliDireita______, 0036, 001, 0, this.Beneficiario.ContaBancaria.DigitoConta, '0'); // 036 a 036 - Digito da conta
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0037, 001, 0, "0", '0'); // 037 a 037 - Dígito verificador da coop/ag/conta
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0038, 011, 0, boleto.NossoNumero.OnlyNumber() + boleto.NossoNumeroDV, '0'); // 038 a 057 - Identificação do título no banco
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0049, 008, 0, "", ' '); // 037 a 037 - Dígito verificador da coop/ag/conta
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliDireita______, 0057, 002, 0, boleto.Carteira.OnlyNumber(), '1'); // 058 a 058 - Código da carteira
-            reg.Adicionar(TTiposDadoEDI.ediAlphaAliDireita______, 0059, 004, 0, "", ' '); 
+            reg.Adicionar(TTiposDadoEDI.ediAlphaAliDireita______, 0059, 004, 0, "", ' ');
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0063, 015, 0, boleto.NumeroDocumento, ' '); // 063 a 077 - Nº do documento de cobrança
             reg.Adicionar(TTiposDadoEDI.ediDataDDMMAAAA_________, 0078, 008, 0, boleto.DataVencimento, '0'); // 078 a 085 - Data de vencimento do título
             reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0086, 015, 2, boleto.ValorTitulo, '0'); // 086 a 100 - Valor nominal do título
@@ -153,7 +153,7 @@ namespace BoletoNetCore
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0154, 001, 0, boleto.Avalista.TipoCPFCNPJ("0"), '1'); // 154 a 154 - Tipo de inscrição
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliDireita______, 0155, 015, 0, boleto.Avalista.CPFCNPJ.OnlyNumber(), '0'); // 155 a 169 - Número de inscrição
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0170, 040, 0, boleto.Avalista.Nome, ' '); // 170 a 209 - Nome do sacador/avalista
-            reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0213, 023, 0, "", ' '); 
+            reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0213, 023, 0, "", ' ');
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0233, 008, 0, "", ' '); // 233 a 240 - Uso exclusivo FEBRABAN/CNAB
             reg.CodificarLinha();
             return Utils.SubstituiCaracteresEspeciais(reg.LinhaRegistro);
@@ -172,7 +172,7 @@ namespace BoletoNetCore
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0014, 001, 0, "R", ' '); // 014 a 014 - Cód. segmento do registro detalhe
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0015, 001, 0, "", ' '); // 015 a 015 - Uso exclusivo FEBRABAN/CNAB
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0016, 002, 0, boleto.CodigoMovimentoRetorno, ' '); // 016 a 017 - Código de movimento remessa
-            reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0018, 48, 0, "", ' '); 
+            reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0018, 48, 0, "", ' ');
 
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0066, 001, 0, "2", '0'); // 66 Código da multa - 2 valor percentual (manual: "No Unicredi a multa só pode ser informada em valor percentual")
             reg.Adicionar(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0067, 008, 0, " ", ' '); // 67 - 74 Se cobrar informe a data para iniciar a cobrança ou informe zeros se não cobrar
@@ -252,7 +252,7 @@ namespace BoletoNetCore
             reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0033, 020, 0, "", ' ')); // 033 a 052 - Código do convênio no banco (O Unicredi não valida este campo; cfe Manual Agosto 2010 pág. 35)
             reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediAlphaAliDireita______, 0053, 005, 0, this.Beneficiario.ContaBancaria.Agencia.OnlyNumber(), '0')); // 053 a 057 - Agência mantenedora da conta
             reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0058, 001, 0, this.Beneficiario.ContaBancaria.DigitoAgencia, '0')); // 058 a 058 - Dígito verificador da agência
-            reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediAlphaAliDireita______, 0059, 014, 0, this.Beneficiario.Codigo, '0')); 
+            reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediAlphaAliDireita______, 0059, 014, 0, this.Beneficiario.Codigo, '0'));
             reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0073, 030, 0, this.Beneficiario.Nome, ' ')); // 073 a 102 - Nome da empresa
             reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0103, 030, 0, "UNICRED DO BRASIL", ' ')); // 103 a 132 - Nome do banco = "Unicredi"
             reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0133, 010, 0, "", ' ')); // 133 a 142 - Uso exclusivo FEBRABAN/CNAB
@@ -269,7 +269,7 @@ namespace BoletoNetCore
             return Utils.SubstituiCaracteresEspeciais(reg.LinhaRegistro);
         }
 
-        
+
 
         public override void LerDetalheRetornoCNAB240SegmentoT(ref Boleto boleto, string registro)
         {

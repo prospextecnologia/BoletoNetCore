@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
-using BoletoNetCore.Extensions;
+﻿using BoletoNetCore.Exceptions;
+using System;
 
 namespace BoletoNetCore
 {
@@ -160,7 +158,7 @@ namespace BoletoNetCore
             {
                 if (boleto.ValorMulta == 0 && boleto.PercentualMulta == 0)
                     return "";
-                
+
                 var valorOuPercentualMulta = boleto.TipoCodigoMulta == Enums.TipoCodigoMulta.Valor ? boleto.ValorMulta : boleto.PercentualMulta;
 
                 numeroRegistroGeral++;
@@ -175,7 +173,7 @@ namespace BoletoNetCore
                 reg.Adicionar(TTiposDadoEDI.ediNumericoSemSeparador_, 0395, 006, 0, numeroRegistroGeral, '0');
                 reg.CodificarLinha();
                 return reg.LinhaRegistro;
-                    
+
             }
             catch (Exception ex)
             {
@@ -220,7 +218,7 @@ namespace BoletoNetCore
                 this.Beneficiario.ContaBancaria.Conta = registro.Substring(31, 8);
                 this.Beneficiario.ContaBancaria.DigitoConta = registro.Substring(39, 1);
                 this.Beneficiario.Nome = registro.Substring(46, 30).Trim();
-                
+
                 this.Beneficiario.Codigo = registro.Substring(149, 7).Trim();
             }
             catch (Exception ex)

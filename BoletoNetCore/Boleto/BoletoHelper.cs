@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace BoletoNetCore
@@ -19,7 +18,7 @@ namespace BoletoNetCore
             throw new NotImplementedException();
         }
 
-        public static Stream GerarRemessa(this Boletos boletos, int numArquivoRemessa, TipoArquivo tipoArquivo = TipoArquivo.CNAB240 )
+        public static Stream GerarRemessa(this Boletos boletos, int numArquivoRemessa, TipoArquivo tipoArquivo = TipoArquivo.CNAB240)
         {
             ArquivoRemessa rem = new ArquivoRemessa(boletos.Banco, tipoArquivo, numArquivoRemessa);
             MemoryStream ms = new MemoryStream(2048);

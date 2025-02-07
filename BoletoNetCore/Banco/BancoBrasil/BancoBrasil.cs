@@ -1,7 +1,5 @@
-﻿using System;
+﻿using BoletoNetCore.Exceptions;
 using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
-using BoletoNetCore.Extensions;
 
 namespace BoletoNetCore
 {
@@ -16,7 +14,7 @@ namespace BoletoNetCore
             RemoveAcentosArquivoRemessa = true;
         }
 
-        
+
         public void FormataBeneficiario()
         {
             var contaBancaria = Beneficiario.ContaBancaria;

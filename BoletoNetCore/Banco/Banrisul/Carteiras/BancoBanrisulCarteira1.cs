@@ -1,5 +1,4 @@
 ﻿using System;
-using BoletoNetCore.Extensions;
 using static System.String;
 
 namespace BoletoNetCore
@@ -24,7 +23,7 @@ namespace BoletoNetCore
                 // Banco irá gerar Nosso Número
                 boleto.NossoNumero = new String('0', 8);
                 boleto.NossoNumeroDV = "00";
-                boleto.NossoNumeroFormatado = boleto.NossoNumero+"-"+boleto.NossoNumeroDV;
+                boleto.NossoNumeroFormatado = boleto.NossoNumero + "-" + boleto.NossoNumeroDV;
             }
             else
             {
@@ -51,7 +50,7 @@ namespace BoletoNetCore
                 throw new Exception($"Número da agência ({contaBancaria.Agencia}) deve conter 4 digitos");
 
 
-            var campoLivre = $"21{contaBancaria.Agencia}{contaBancaria.Conta.Substring(0,7)}{boleto.NossoNumero}40";
+            var campoLivre = $"21{contaBancaria.Agencia}{contaBancaria.Conta.Substring(0, 7)}{boleto.NossoNumero}40";
             int dv1 = Mod10Banrisul(campoLivre);
             int dv1e2 = Mod11Banrisul(campoLivre, dv1); // O módulo 11 sempre devolve os dois Dígitos, pois, as vezes o dígito calculado no mod10 será incrementado em 1
             return campoLivre + dv1e2.ToString("00");

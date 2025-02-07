@@ -3,6 +3,6 @@
     public enum TipoCodigoBaixaDevolucao
     {
         NaoBaixarNaoDevolver = 0,
-        BaixarDevolver =1
+        BaixarDevolver = 1
     }
 }

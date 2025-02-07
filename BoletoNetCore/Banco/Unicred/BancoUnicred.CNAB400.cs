@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
+﻿using BoletoNetCore.Util;
 using System;
-using BoletoNetCore.Util;
 
 namespace BoletoNetCore
 {
@@ -74,7 +72,7 @@ namespace BoletoNetCore
                 reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0008, 012, 0, boleto.Banco.Beneficiario.ContaBancaria.Conta.OnlyNumber(), '0'));                                                    //002-002  'A' - Unicredi com Registro
                 reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0020, 001, 0, boleto.Banco.Beneficiario.ContaBancaria.DigitoConta, ' '));                                           //005-016
                 reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0021, 001, 0, "0", '0'));                                                    //017-017  Tipo de moeda: 'A' - REAL
-                reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0022, 003, 0, boleto.Banco.Beneficiario.ContaBancaria.CarteiraPadrao , '0'));                                                    //018-018  Tipo de desconto: 'A' - VALOR
+                reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0022, 003, 0, boleto.Banco.Beneficiario.ContaBancaria.CarteiraPadrao, '0'));                                                    //018-018  Tipo de desconto: 'A' - VALOR
                 reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0025, 013, 0, "0", '0'));                                                    //017-017  Tipo de moeda: 'A' - REAL
                 reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediAlphaAliEsquerda_____, 0038, 025, 0, boleto.NumeroControleParticipante, ' '));
                 reg.CamposEDI.Add(new TCampoRegistroEDI(TTiposDadoEDI.ediNumericoSemSeparador_, 0063, 003, 0, boleto.Banco.Codigo.ToString(), '0'));
@@ -176,7 +174,7 @@ namespace BoletoNetCore
             }
         }
 
-        
+
         private TipoEspecieDocumento AjustaEspecieCnab400(string codigoEspecie)
         {
             switch (codigoEspecie)
