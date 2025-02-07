@@ -18,5 +18,6 @@ namespace BoletoNetCore
         CrediSIS = 097,
         BancoInter = 077,
         BancoDaycoval = 707,
+        BRB = 070
     }
 }

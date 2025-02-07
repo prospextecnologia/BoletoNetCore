@@ -58,7 +58,7 @@ namespace BoletoNetCore
                 string strline = string.Empty;
 
                 // Header do Arquivo
-                strline = Banco.GerarHeaderRemessa(TipoArquivo, NumeroArquivoRemessa, ref numeroRegistroGeral);
+                strline = Banco.GerarHeaderRemessa(TipoArquivo, NumeroArquivoRemessa, ref numeroRegistroGeral, boletos.Count);
                 if (string.IsNullOrWhiteSpace(strline))
                     throw new Exception("Registro HEADER obrigatório.");
                 strline = FormataLinhaArquivoCNAB(strline, tamanhoRegistro);

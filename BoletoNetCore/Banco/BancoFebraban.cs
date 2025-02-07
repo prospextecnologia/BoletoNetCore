@@ -77,7 +77,7 @@ namespace BoletoNetCore
         /// <param name="numeroArquivoRemessa"></param>
         /// <param name="numeroRegistro"></param>
         /// <returns></returns>
-        public virtual string GerarHeaderRemessa(TipoArquivo tipoArquivo, int numeroArquivoRemessa, ref int numeroRegistro)
+        public virtual string GerarHeaderRemessa(TipoArquivo tipoArquivo, int numeroArquivoRemessa, ref int numeroRegistro, int numeroRegistrosRemessa = 0)
         {
             try
             {
@@ -92,7 +92,7 @@ namespace BoletoNetCore
                         header += ((IBancoCNAB240)this).GerarHeaderLoteRemessaCNAB240(ref numeroArquivoRemessa, ref numeroRegistro);
                         break;
                     case TipoArquivo.CNAB400:
-                        header += ((IBancoCNAB400)this).GerarHeaderRemessaCNAB400(ref numeroArquivoRemessa, ref numeroRegistro);
+                        header += ((IBancoCNAB400)this).GerarHeaderRemessaCNAB400(ref numeroArquivoRemessa, ref numeroRegistro, numeroRegistrosRemessa);
                         break;
                     case TipoArquivo.CNAB150:
                         header += ((IBancoCNAB150)this).GerarHeaderRemessaCNAB150(ref numeroArquivoRemessa, ref numeroRegistro);

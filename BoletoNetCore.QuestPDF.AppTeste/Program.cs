@@ -12,6 +12,7 @@ namespace BoletoNetCore.QuestPDF.AppTeste
                 var currentDir = Directory.GetCurrentDirectory();
                 Console.Write("Informe o diretório para gerar o pdf: ");
                 currentDir = Console.ReadLine();
+                currentDir = String.IsNullOrEmpty(currentDir) ? Directory.GetCurrentDirectory() : currentDir;
                 if (!Directory.Exists(currentDir))
                     throw new Exception("O diretório informado não existe: " + currentDir);
 
@@ -19,19 +20,20 @@ namespace BoletoNetCore.QuestPDF.AppTeste
 
                 var contaBancaria = new ContaBancaria
                 {
-                    Agencia = "0156",
-                    Conta = "85305",
-                    DigitoConta = "4",
-                    CarteiraPadrao = "1",
+                    Agencia = "081",
+                    DigitoAgencia = "3",
+                    Conta = "240004499",
+                    DigitoConta = "0",
+                    CarteiraPadrao = "COB",
                     TipoCarteiraPadrao = TipoCarteira.CarteiraCobrancaSimples,
-                    VariacaoCarteiraPadrao = "A",
+                    //VariacaoCarteiraPadrao = "A",
                     TipoFormaCadastramento = TipoFormaCadastramento.ComRegistro,
-                    TipoImpressaoBoleto = TipoImpressaoBoleto.Empresa,
-                    OperacaoConta = "05"
+                    TipoImpressaoBoleto = TipoImpressaoBoleto.Empresa
+                    //OperacaoConta = "05"
 
                 };
-                var banco = Banco.Instancia(Bancos.Sicredi);
-                banco.Beneficiario = Utils.GerarBeneficiario("85305", "", "", contaBancaria);
+                var banco = Banco.Instancia(Bancos.BRB);
+                banco.Beneficiario = Utils.GerarBeneficiario("240004499", "0", "", contaBancaria);
                 banco.FormataBeneficiario();
 
                 var boletos = Utils.GerarBoletos(banco, 4, "N", 10);

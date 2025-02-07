@@ -13,7 +13,7 @@ namespace BoletoNetCore
             return detalhe;
         }
 
-        public string GerarHeaderRemessaCNAB400(ref int numeroArquivoRemessa, ref int numeroRegistroGeral)
+        public string GerarHeaderRemessaCNAB400(ref int numeroArquivoRemessa, ref int numeroRegistroGeral, int numeroRegistrosRemessa = 0)
         {
             try
             {

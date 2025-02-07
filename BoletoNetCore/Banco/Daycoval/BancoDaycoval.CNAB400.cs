@@ -7,7 +7,7 @@ namespace BoletoNetCore
     {
         #region Remessa
 
-        public string GerarHeaderRemessaCNAB400(ref int numeroArquivoRemessa, ref int numeroRegistroGeral)
+        public string GerarHeaderRemessaCNAB400(ref int numeroArquivoRemessa, ref int numeroRegistroGeral, int numeroRegistrosRemessa = 0)
         {
             try
             {
@@ -269,7 +269,7 @@ namespace BoletoNetCore
                 case "14":
                     return "Vencimento Alterado";
                 case "15":
-                    return "Baixa Rejeitada - " + BaixaDescricaoRejeicaoCnab400(codigoRejeicao); 
+                    return "Baixa Rejeitada - " + BaixaDescricaoRejeicaoCnab400(codigoRejeicao);
                 case "16":
                     return "Instrução Rejeitada - " + InstrucoesDescricaoRejeicaoCnab400(codigoRejeicao);
                 case "19":
@@ -457,7 +457,7 @@ namespace BoletoNetCore
                     return "";
             }
         }
-        
+
         private string BaixaDescricaoRejeicaoCnab400(string codigo)
         {
             switch (codigo)

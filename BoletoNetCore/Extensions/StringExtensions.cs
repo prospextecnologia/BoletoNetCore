@@ -32,6 +32,58 @@ namespace BoletoNetCore.Extensions
             return str.Substring(startIndex, length);
         }
 
+        public static string CalcularDVMod10BRB(this string texto)
+        {
+            int soma = 0, peso = 2;
+            for (var i = 0; i < texto.Length; i++)
+            {
+                var numero = (int)char.GetNumericValue(texto[i]);
+                peso = i % 2 == 0 ? 2 : 1;
+                var parcial = numero * peso;
+                if (parcial < 10)
+                    soma += parcial;
+                else
+                {
+                    soma += parcial - 9;
+                }
+            }
+            var moduloFinal = soma % 10;
+            int digitoFinal = 0;
+            if (moduloFinal > 0)
+                digitoFinal = 10 - moduloFinal;
+
+            return digitoFinal.ToString();
+        }
+
+        public static string CalcularDVMod11BRB(this string texto, ref string dv1)
+        {
+            string digito;
+            int pesoMaximo = 7, soma = 0, peso = 2;
+            for (var i = texto.Length - 1; i >= 0; i--)
+            {
+                soma = soma + (int)char.GetNumericValue(texto[i]) * peso;
+                if (peso == pesoMaximo)
+                    peso = 2;
+                else
+                    peso = peso + 1;
+            }
+            var resto = soma % 11;
+            switch (resto)
+            {
+                case 0:
+                    digito = "0";
+                    break;
+                default:
+                    if (resto == 1)
+                    {
+                        var dv2 = resto + Int32.Parse(dv1);
+                        dv1 = dv2 == 10 ? "" : dv2.ToString();
+                    }
+                    digito = (11 - resto).ToString();
+                    break;
+            }
+            return digito;
+        }
         public static string CalcularDVCaixa(this string texto)
         {
             string digito;

@@ -50,7 +50,7 @@ namespace BoletoNetCore
         /// <summary>
         /// Gera o header do arquivo de remessa
         /// </summary>
-        string GerarHeaderRemessa(TipoArquivo tipoArquivo, int numeroArquivoRemessa, ref int numeroRegistro);
+        string GerarHeaderRemessa(TipoArquivo tipoArquivo, int numeroArquivoRemessa, ref int numeroRegistro, int numeroRegistrosRemessa = 0);
 
         /// <summary>
         /// Gera o Trailer do arquivo de remessa
@@ -81,7 +81,7 @@ namespace BoletoNetCore
     public interface IBancoCNAB400 : IBanco
     {
         //remessa
-        string GerarHeaderRemessaCNAB400(ref int numeroArquivoRemessa, ref int numeroRegistroGeral);
+        string GerarHeaderRemessaCNAB400(ref int numeroArquivoRemessa, ref int numeroRegistroGeral, int numeroRegistrosRemessa = 0);
         string GerarDetalheRemessaCNAB400(Boleto boleto, ref int registro);
         string GerarTrailerRemessaCNAB400(int numeroRegistroGeral, decimal valorBoletoGeral,
             int numeroRegistroCobrancaSimples, decimal valorCobrancaSimples,
