@@ -1,7 +1,6 @@
 ﻿using BoletoNetCore.Exceptions;
 using System;
 using System.Collections.Generic;
-using static System.String;
 
 namespace BoletoNetCore
 {
@@ -24,7 +23,7 @@ namespace BoletoNetCore
                 throw BoletoNetCoreException.CarteiraNaoImplementada(contaBancaria.CarteiraComVariacaoPadrao);
 
             var codigoBeneficiario = Beneficiario.Codigo;
-            if (Beneficiario.CodigoDV == Empty)
+            if (String.IsNullOrEmpty(Beneficiario.CodigoDV))
                 throw new Exception($"Dígito do código do beneficiário ({codigoBeneficiario}) não foi informado.");
 
             contaBancaria.FormatarDados("PAGÁVEL PREFERENCIALMENTE NO SICOOB.", "", "", 9);

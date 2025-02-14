@@ -27,7 +27,7 @@ namespace BoletoNetCore
             }
             else
             {
-                if (boleto.NossoNumero?.Length != 10 || boleto.NossoNumero?.Length != 12)
+                if (boleto.NossoNumero?.Length != 10 && boleto.NossoNumero?.Length != 12)
                     throw new Exception($"Nosso Número ({boleto.NossoNumero}) deve não deve conter mais de 10 dígitos ou 12 com os digito verificador.");
 
                 if (!'1'.Equals(boleto.NossoNumero[0]) && !'2'.Equals(boleto.NossoNumero[0]))
