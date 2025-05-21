@@ -1,11 +1,9 @@
-﻿using System;
+﻿using BoletoNetCore.Exceptions;
 using System.Collections.Generic;
-using BoletoNetCore.Exceptions;
-using BoletoNetCore.Extensions;
 
 namespace BoletoNetCore.BTGPactual
 {
-    public class BancoBTGPactual: BancoFebraban<BancoBTGPactual>, IBanco
+    public class BancoBTGPactual : BancoFebraban<BancoBTGPactual>, IBanco
     {
         public BancoBTGPactual()
         {
@@ -22,9 +20,9 @@ namespace BoletoNetCore.BTGPactual
                 throw BoletoNetCoreException.CarteiraNaoImplementada(contaBancaria.CarteiraComVariacaoPadrao);
 
             contaBancaria.FormatarDados(
-                "EM TODA A REDE BANCÁRIA E SEUS CORRESPONDENTES ATÉ O VALOR LIMITE E DATA DO VENCIMENTO", 
-                "", 
-                "", 
+                "EM TODA A REDE BANCÁRIA E SEUS CORRESPONDENTES ATÉ O VALOR LIMITE E DATA DO VENCIMENTO",
+                "",
+                "",
                 8
             );
             Beneficiario.CodigoFormatado = Beneficiario.ContaBancaria.Agencia;

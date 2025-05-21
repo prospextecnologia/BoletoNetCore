@@ -1,6 +1,5 @@
-﻿using System;
-using BoletoNetCore.Exceptions;
-using BoletoNetCore.Extensions;
+﻿using BoletoNetCore.Extensions;
+using System;
 using static System.String;
 
 namespace BoletoNetCore
@@ -36,7 +35,7 @@ namespace BoletoNetCore
                 var contaBancaria = boleto.Banco.Beneficiario.ContaBancaria;
                 boleto.NossoNumeroFormatado = $"{contaBancaria.Agencia}{contaBancaria.DigitoAgencia}/{contaBancaria.CarteiraPadrao}/{boleto.NossoNumero}-{boleto.NossoNumeroDV}";
             }
-            
+
 
         }
 

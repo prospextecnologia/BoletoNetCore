@@ -41,8 +41,13 @@ namespace BoletoNetCore
 
         public override string FormatarNomeArquivoRemessa(TipoArquivo TipoArquivo, IBanco Banco, int sequencial)
         {
-            if (sequencial < 0 || sequencial > 10)
+            if (sequencial < 0)
                 throw BoletoNetCoreException.NumeroSequencialInvalido(sequencial);
+
+            if (sequencial > 10)
+            {
+                sequencial = sequencial % 10;
+            }
 
             //número máximos de arquivos enviados no dia são 10 
             return string.Format("{0}_UNICRED_{1}_{2}_{3}_{4}.REM",

@@ -1,5 +1,5 @@
-﻿using System;
-using BoletoNetCore.Extensions;
+﻿using BoletoNetCore.Extensions;
+using System;
 using static System.String;
 
 namespace BoletoNetCore
@@ -25,7 +25,7 @@ namespace BoletoNetCore
             if (boleto.NossoNumero.Length != 08)
             {
                 // Se o Nosso Número tem 08 dígitos, nosso numero invalido
-                    throw new Exception($"Nosso Número ({boleto.NossoNumero}) deve conter 08 dígitos.");
+                throw new Exception($"Nosso Número ({boleto.NossoNumero}) deve conter 08 dígitos.");
             }
 
             boleto.NossoNumero = boleto.NossoNumero.PadLeft(8, '0');
