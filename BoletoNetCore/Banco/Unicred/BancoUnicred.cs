@@ -41,6 +41,8 @@ namespace BoletoNetCore
 
         public override string FormatarNomeArquivoRemessa(TipoArquivo TipoArquivo, IBanco Banco, int sequencial)
         {
+            sequencial = sequencial % 100;
+
             if (sequencial < 0)
                 throw BoletoNetCoreException.NumeroSequencialInvalido(sequencial);
 
