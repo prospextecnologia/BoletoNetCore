@@ -242,6 +242,7 @@ namespace BoletoNetCore
         public string ByteNossoNumero { get; set; } = "2";
 
         public NotaFiscalEletronica NFe { get; set; } = new NotaFiscalEletronica();
+        public string Observacao { get; set; }
 
         public void ValidarDados()
         {
